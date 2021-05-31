@@ -14,7 +14,8 @@
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2, auto);
-    column-gap: 1.875rem; // 30px
+    -moz-column-gap: 1.875rem;
+         column-gap: 1.875rem; // 30px
     row-gap: 1.5rem; // 24px
 
     .card {
