@@ -1,0 +1,18 @@
+@use 'colors' as *;
+
+body {
+  background-color: $Dark-grayish-blue;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  transition: all 200ms ease-in-out;
+}

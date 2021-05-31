@@ -1,0 +1,156 @@
+@use 'root';
+@use 'typography';
+@use 'colors' as *;
+@use 'screens' as *;
+
+.container {
+  padding: 4.4375rem 1.5rem; // 71px 24px
+  max-width: 1440px;
+  display: grid;
+  gap: 1.5rem; // 14px
+  position: relative;
+
+  @media (min-width: $screen-2-col) {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    column-gap: 1.875rem; // 30px
+    row-gap: 1.5rem; // 24px
+
+    .card {
+      margin: 0;
+      height: 100%;
+
+      &__c5 {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  @media (min-width: $screen-3-col) {
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: auto auto;
+    padding: 10.25rem 10.3125rem; // 164px 165px
+
+    .card {
+      &__c1 {
+        grid-column: 1 / 3;
+      }
+
+      &__c4 {
+        grid-column: 2 / 4;
+      }
+
+      &__c2,
+      &__c3,
+      &__c5 {
+        max-width: 15.9375rem; // 255px
+      }
+
+      &__c5 {
+        grid-column: 4 / 5;
+        grid-row: 1 / 3;
+      }
+    }
+  }
+}
+
+.card {
+  border-radius: 0.5rem;
+  padding: 1.5rem 2rem 2rem; // 24px 32px 32px
+  box-shadow: 1.25rem 3.125rem 3.125rem -1.875rem hsla(0, 0%, 0%, 0.15); // 20px 50px 50px -30px
+  // margin-bottom: 1.5rem; // 24px // * moving to gap for ONLY-GRID
+  display: grid;
+  position: relative;
+
+  h2 {
+    padding-bottom: 0.9375rem; // 15px
+  }
+
+  .big-quote {
+    position: absolute;
+    top: 0;
+    right: 1.5rem; // 24px
+
+    @media (min-width: $screen-2-col) {
+      right: 14.8148148%; // 80px at 1440px
+    }
+  }
+
+  &__c1 {
+    p {
+      margin-right: 0.875rem; // 14px
+    }
+  }
+
+  &__c4 {
+    padding-right: 1.875rem; // 30px
+  }
+  &__c5 {
+    padding-right: 1.9375rem; // 31px
+  }
+
+  @media (min-width: $mob-screen) {
+    &__c1 {
+      p {
+        margin: 0;
+      }
+    }
+
+    br {
+      display: none;
+    }
+  }
+
+  @media (min-width: $screen-2-col) {
+    padding: 1.5rem 1.9375rem 2.0625rem 2rem; // 24px 31px 33px 32px
+
+    &__c1,
+    &__c2 {
+      h2 {
+        padding-bottom: 1.0625rem; // 17px
+      }
+    }
+
+    &__c3,
+    &__c4,
+    &__c5 {
+      h2 {
+        padding-bottom: 1.1625rem; // 18.6px
+      }
+    }
+  }
+}
+
+header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-bottom: 1.0625rem; // 17px
+
+  @media (min-width: $mob-screen) {
+    margin-bottom: 1rem;
+  }
+
+  .attestant {
+    &__name,
+    &__status {
+      display: block;
+    }
+
+    &__photo {
+      $diam: 2rem;
+      width: $diam;
+      height: $diam;
+      border-radius: 50%;
+      border: 0.125rem solid hsla(0, 0%, 100%, 0.5); // * 2px change color based on card
+      margin-right: 0.9375rem; // 15px
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
