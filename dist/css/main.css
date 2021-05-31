@@ -74,6 +74,7 @@ p {
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2, auto);
+    -moz-column-gap: 1.875rem;
     column-gap: 1.875rem;
     row-gap: 1.5rem;
   }
@@ -111,6 +112,7 @@ p {
   padding: 1.5rem 2rem 2rem;
   box-shadow: 1.25rem 3.125rem 3.125rem -1.875rem rgba(0, 0, 0, 0.15);
   display: grid;
+  grid-template-rows: max-content max-content 1fr;
   position: relative;
 }
 .card h2 {
